@@ -33,7 +33,6 @@ class _MyScaffoldState extends State<MyScaffold> {
 
   void submitExpense(
       String title, String amount, Category category, DateTime date) {
-
     setState(() {
       // ignore: avoid_print
       print("Expense added");
@@ -43,6 +42,7 @@ class _MyScaffoldState extends State<MyScaffold> {
 
   void addExpense(context) {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (ctx) => AddScreen(submitExpense: submitExpense),
     );
